@@ -1,3 +1,5 @@
+import 'package:cm2p/convert_to_token.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/pause_card_widget.dart';
@@ -376,7 +378,8 @@ class _MYCardWidgetState extends State<MYCardWidget>
                                     duration: Duration(milliseconds: 220),
                                     reverseDuration:
                                         Duration(milliseconds: 220),
-                                    child: TransferFundsWidget(),
+                                    // child: TransferFundsWidget(),
+                                    child: ConvertToTokenWidget(),
                                   ),
                                 );
                               },

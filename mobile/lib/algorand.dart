@@ -86,8 +86,22 @@ Future<void> fundWallet(int amount) async {
   await transfer(
     algorand: algorand,
     sender: accountJB,
-    receiver: await Account.fromSeedPhrase(
+    receiverAddress: firebaseUser.accountPublicAddress,
+    assetId: ASSET_ID,
+    amount: amount,
+  );
+}
+
+Future<void> transferToken(int amount, String publicAddress) async {
+  final firebaseUser =
+      await UsersRecord.getDocument(currentUserReference).first;
+
+  // Transfer the asset
+  await transfer(
+    algorand: algorand,
+    sender: await Account.fromSeedPhrase(
         seeds[firebaseUser.accountPublicAddress].split(' ')),
+    receiverAddress: publicAddress,
     assetId: ASSET_ID,
     amount: amount,
   );
@@ -134,7 +148,7 @@ Future<void> setup() async {
   await transfer(
     algorand: algorand,
     sender: accountSNB,
-    receiver: accountJB,
+    receiverAddress: accountJB.publicAddress,
     assetId: assetId,
     amount: 20000000000,
   );
@@ -143,7 +157,7 @@ Future<void> setup() async {
   await transfer(
     algorand: algorand,
     sender: accountSNB,
-    receiver: accountCS,
+    receiverAddress: accountCS.publicAddress,
     assetId: assetId,
     amount: 20000000000,
   );
@@ -265,7 +279,7 @@ Future optIn({
 Future<bool> transfer({
   Algorand algorand,
   Account sender,
-  Account receiver,
+  String receiverAddress,
   int assetId,
   int amount,
 }) async {
@@ -278,7 +292,7 @@ Future<bool> transfer({
   final tx = await (AssetTransferTransactionBuilder()
         ..assetId = assetId
         ..sender = sender.address
-        ..receiver = receiver.address
+        ..receiver = Address.fromAlgorandAddress(address: receiverAddress)
         ..amount = amount
         ..suggestedParams = params)
       .build();

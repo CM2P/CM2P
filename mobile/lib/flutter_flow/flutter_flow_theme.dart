@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class FlutterFlowTheme {
   static const Color primaryColor = Color(0xFF3C5BFA);
   static const Color secondaryColor = Color(0xFF18A0FB);
-  static const Color tertiaryColor = Color(0xFF000000);
+  static const Color tertiaryColor = Color(0xFFFF00D6);
 
   static const Color background = Color(0xFFFFFFFF);
   static const Color darkBackground = Color(0xFFC1D3FF);
@@ -13,14 +13,16 @@ class FlutterFlowTheme {
   static const Color grayDark = Color(0xFF57636C);
   static const Color grayLight = Color(0xFF8B97A2);
   static const Color errorRed = Color(0xFFF06A6A);
+  static const Color gradientDark = Color(0xFF000000);
+  static const Color gradientLight = Color(0xFF141E55);
+  static const Color creditCardText = Color(0xFF000615);
 
-  String primaryFontFamily = 'Poppins';
+  String primaryFontFamily = 'Roboto';
   String secondaryFontFamily = 'Roboto';
   static TextStyle get title1 => GoogleFonts.getFont(
         'Lexend Deca',
         color: textColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 24,
+        fontSize: 40,
       );
   static TextStyle get title2 => GoogleFonts.getFont(
         'Lexend Deca',
@@ -50,7 +52,7 @@ class FlutterFlowTheme {
         'Lexend Deca',
         color: grayLight,
         fontWeight: FontWeight.normal,
-        fontSize: 14,
+        fontSize: 18,
       );
   static TextStyle get bodyText2 => GoogleFonts.getFont(
         'Lexend Deca',
