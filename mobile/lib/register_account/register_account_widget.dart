@@ -1,3 +1,5 @@
+import 'package:algorand_dart/algorand_dart.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../complete_profile/complete_profile_widget.dart';
@@ -420,25 +422,29 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                           onPressed: () async {
                             setState(() => _loadingButton3 = true);
                             try {
-                              final user = await signInAnonymously(context);
-                              if (user == null) {
-                                return;
-                              }
-                              final budgetListCreateData =
-                                  createBudgetListRecordData(
-                                budgetUser: currentUserReference,
-                              );
-                              await BudgetListRecord.collection
-                                  .doc()
-                                  .set(budgetListCreateData);
-                              await Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MY_Card'),
-                                ),
-                                (r) => false,
-                              );
+                              final account = await Account.random();
+                              print('My address 1: ${account.publicAddress}');
+                              print(
+                                  'My passphrase 1: ${await account.seedPhrase}');
+                              // final user = await signInAnonymously(context);
+                              // if (user == null) {
+                              //   return;
+                              // }
+                              // final budgetListCreateData =
+                              //     createBudgetListRecordData(
+                              //   budgetUser: currentUserReference,
+                              // );
+                              // await BudgetListRecord.collection
+                              //     .doc()
+                              //     .set(budgetListCreateData);
+                              // await Navigator.pushAndRemoveUntil(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) =>
+                              //         NavBarPage(initialPage: 'MY_Card'),
+                              //   ),
+                              //   (r) => false,
+                              // );
                             } finally {
                               setState(() => _loadingButton3 = false);
                             }

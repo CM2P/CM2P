@@ -1,3 +1,6 @@
+import 'package:algorand_dart/algorand_dart.dart';
+import 'package:cm2p/algorand.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -378,25 +381,30 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           onPressed: () async {
                             setState(() => _loadingButton4 = true);
                             try {
-                              final user = await signInAnonymously(context);
-                              if (user == null) {
-                                return;
-                              }
-                              final budgetListCreateData =
-                                  createBudgetListRecordData(
-                                budgetUser: currentUserReference,
-                              );
-                              await BudgetListRecord.collection
-                                  .doc()
-                                  .set(budgetListCreateData);
-                              await Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MY_Card'),
-                                ),
-                                (r) => false,
-                              );
+                              setup();
+                              // final account = await Account.random();
+                              // print('My address 1: ${account.publicAddress}');
+                              // print(
+                              //     'My passphrase 1: ${await account.seedPhrase}');
+                              // final user = await signInAnonymously(context);
+                              // if (user == null) {
+                              //   return;
+                              // }
+                              // final budgetListCreateData =
+                              //     createBudgetListRecordData(
+                              //   budgetUser: currentUserReference,
+                              // );
+                              // await BudgetListRecord.collection
+                              //     .doc()
+                              //     .set(budgetListCreateData);
+                              // await Navigator.pushAndRemoveUntil(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) =>
+                              //         NavBarPage(initialPage: 'MY_Card'),
+                              //   ),
+                              //   (r) => false,
+                              // );
                             } finally {
                               setState(() => _loadingButton4 = false);
                             }
