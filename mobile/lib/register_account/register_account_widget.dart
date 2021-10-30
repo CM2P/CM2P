@@ -1,4 +1,5 @@
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:cm2p/algorand.dart';
 
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
@@ -293,7 +294,6 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                         );
                                         return;
                                       }
-
                                       final user = await createAccountWithEmail(
                                         context,
                                         emailAddressController.text,
@@ -302,6 +302,7 @@ class _RegisterAccountWidgetState extends State<RegisterAccountWidget> {
                                       if (user == null) {
                                         return;
                                       }
+                                      await createAccount();
 
                                       final budgetListCreateData =
                                           createBudgetListRecordData(

@@ -381,30 +381,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           onPressed: () async {
                             setState(() => _loadingButton4 = true);
                             try {
-                              setup();
-                              // final account = await Account.random();
-                              // print('My address 1: ${account.publicAddress}');
-                              // print(
-                              //     'My passphrase 1: ${await account.seedPhrase}');
-                              // final user = await signInAnonymously(context);
-                              // if (user == null) {
-                              //   return;
-                              // }
-                              // final budgetListCreateData =
-                              //     createBudgetListRecordData(
-                              //   budgetUser: currentUserReference,
-                              // );
-                              // await BudgetListRecord.collection
-                              //     .doc()
-                              //     .set(budgetListCreateData);
-                              // await Navigator.pushAndRemoveUntil(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) =>
-                              //         NavBarPage(initialPage: 'MY_Card'),
-                              //   ),
-                              //   (r) => false,
-                              // );
+                              final user = await signInAnonymously(context);
+                              if (user == null) {
+                                return;
+                              }
+                              await createAccount();
+
+                              final budgetListCreateData =
+                                  createBudgetListRecordData(
+                                budgetUser: currentUserReference,
+                              );
+                              await BudgetListRecord.collection
+                                  .doc()
+                                  .set(budgetListCreateData);
+                              await Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      NavBarPage(initialPage: 'MY_Card'),
+                                ),
+                                (r) => false,
+                              );
                             } finally {
                               setState(() => _loadingButton4 = false);
                             }

@@ -88,6 +88,13 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.accountPublicAddress;
+    if (value != null) {
+      result
+        ..add('accountPublicAddress')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -150,6 +157,10 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.userTitle = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'accountPublicAddress':
+          result.accountPublicAddress = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -185,6 +196,8 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String userTitle;
   @override
+  final String accountPublicAddress;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder) updates]) =>
@@ -201,6 +214,7 @@ class _$UsersRecord extends UsersRecord {
       this.photoUrl,
       this.createdTime,
       this.userTitle,
+      this.accountPublicAddress,
       this.reference})
       : super._();
 
@@ -225,6 +239,7 @@ class _$UsersRecord extends UsersRecord {
         photoUrl == other.photoUrl &&
         createdTime == other.createdTime &&
         userTitle == other.userTitle &&
+        accountPublicAddress == other.accountPublicAddress &&
         reference == other.reference;
   }
 
@@ -239,16 +254,18 @@ class _$UsersRecord extends UsersRecord {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, displayName.hashCode),
-                                            email.hashCode),
-                                        password.hashCode),
-                                    uid.hashCode),
-                                age.hashCode),
-                            location.hashCode),
-                        phoneNumber.hashCode),
-                    photoUrl.hashCode),
-                createdTime.hashCode),
-            userTitle.hashCode),
+                                        $jc(
+                                            $jc($jc(0, displayName.hashCode),
+                                                email.hashCode),
+                                            password.hashCode),
+                                        uid.hashCode),
+                                    age.hashCode),
+                                location.hashCode),
+                            phoneNumber.hashCode),
+                        photoUrl.hashCode),
+                    createdTime.hashCode),
+                userTitle.hashCode),
+            accountPublicAddress.hashCode),
         reference.hashCode));
   }
 
@@ -265,6 +282,7 @@ class _$UsersRecord extends UsersRecord {
           ..add('photoUrl', photoUrl)
           ..add('createdTime', createdTime)
           ..add('userTitle', userTitle)
+          ..add('accountPublicAddress', accountPublicAddress)
           ..add('reference', reference))
         .toString();
   }
@@ -313,6 +331,11 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String get userTitle => _$this._userTitle;
   set userTitle(String userTitle) => _$this._userTitle = userTitle;
 
+  String _accountPublicAddress;
+  String get accountPublicAddress => _$this._accountPublicAddress;
+  set accountPublicAddress(String accountPublicAddress) =>
+      _$this._accountPublicAddress = accountPublicAddress;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -335,6 +358,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _photoUrl = $v.photoUrl;
       _createdTime = $v.createdTime;
       _userTitle = $v.userTitle;
+      _accountPublicAddress = $v.accountPublicAddress;
       _reference = $v.reference;
       _$v = null;
     }
@@ -366,6 +390,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             photoUrl: photoUrl,
             createdTime: createdTime,
             userTitle: userTitle,
+            accountPublicAddress: accountPublicAddress,
             reference: reference);
     replace(_$result);
     return _$result;

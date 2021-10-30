@@ -2,9 +2,16 @@ import 'dart:io';
 import 'dart:convert' show json;
 
 import 'package:algorand_dart/algorand_dart.dart';
+import 'package:cm2p/auth/auth_util.dart';
+import 'package:cm2p/backend/backend.dart';
 
-Future<Account> createAccount() async {
-  return Account.random();
+Future<void> createAccount() async {
+  final account = await Account.random();
+  final firebaseUser =
+      await UsersRecord.getDocument(currentUserReference).first;
+  await UsersRecord.collection
+      .doc(firebaseUser.reference.id)
+      .update({'accountPublicAddress': account.publicAddress});
 }
 
 Future<void> setup() async {
@@ -257,3 +264,5 @@ void printAssetHolding({
     }
   }
 }
+
+Future<void> updateAccountPublicAddress(String publicAddress) async {}

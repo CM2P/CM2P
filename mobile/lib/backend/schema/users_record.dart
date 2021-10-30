@@ -44,6 +44,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get userTitle;
 
   @nullable
+  String get accountPublicAddress;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
