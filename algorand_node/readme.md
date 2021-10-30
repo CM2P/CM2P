@@ -15,7 +15,11 @@ getting token https://bank.testnet.algorand.network
 
 ## getting Algorand API token
 
-
+To connect from SDK or REST we need to know the network address and authorization token. This are stored in:
+```
+cat $ALGORAND_DATA/algod.net
+cat $ALGORAND_DATA/algod.token
+```
 
 ## AWS credentials
 ```
@@ -72,7 +76,12 @@ sudo chown -R algorand ${ALGORAND_DATA}
 ```
 
 
+# Links
+* AWS console https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#InstanceDetails:instanceId=i-07f6e27e0231f4271
+* https://developer.algorand.org/docs/run-a-node/setup/install/
+* https://developer.algorand.org/docs/run-a-node/operations/switch_networks/
 
-
+# Ideas
+https://about.algodex.com/
 
 
