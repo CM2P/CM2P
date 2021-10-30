@@ -142,7 +142,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            '\$25,202',
+                            'CHF 25,202',
                             style: FlutterFlowTheme.title1.override(
                               fontFamily: 'Lexend Deca',
                               fontSize: 32,
@@ -178,7 +178,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               style: FlutterFlowTheme.bodyText2,
                             ),
                             Text(
-                              '\$12,245',
+                              'CHF 12,245',
                               style: FlutterFlowTheme.title1,
                             ),
                             Padding(
@@ -235,7 +235,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               style: FlutterFlowTheme.bodyText2,
                             ),
                             Text(
-                              '\$4,000',
+                              'CHF 4,000',
                               style: FlutterFlowTheme.title1,
                             ),
                             Padding(
@@ -254,7 +254,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                               child: Text(
-                                '\$3,402',
+                                'CHF 3,402',
                                 style: FlutterFlowTheme.title3,
                               ),
                             ),

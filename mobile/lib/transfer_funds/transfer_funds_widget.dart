@@ -1,3 +1,7 @@
+import 'package:cm2p/algorand.dart';
+import 'package:cm2p/utils.dart';
+import 'package:intl/intl.dart';
+
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -8,6 +12,8 @@ import '../transfer_complete/transfer_complete_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:cm2p/auth/auth_util.dart';
+import 'package:cm2p/backend/backend.dart';
 
 class TransferFundsWidget extends StatefulWidget {
   TransferFundsWidget({Key key}) : super(key: key);
@@ -213,13 +219,67 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Text(
-                                        '\$7,630',
-                                        style: FlutterFlowTheme.title1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          fontSize: 32,
-                                        ),
-                                      )
+                                      FutureBuilder(
+                                          future: UsersRecord.getDocument(
+                                                  currentUserReference)
+                                              .first,
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasData &&
+                                                snapshot.data != null) {
+                                              return Text(
+                                                currencyFormatCHF.format(
+                                                    snapshot.data.fiatWealth),
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  fontSize: 32,
+                                                ),
+                                              );
+                                            } else {
+                                              return Text(
+                                                'CHF ',
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  fontSize: 32,
+                                                ),
+                                              );
+                                            }
+                                          })
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 4, 20, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      FutureBuilder(
+                                          future: updateBalance(),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasData &&
+                                                snapshot.data != null) {
+                                              return Text(
+                                                currencyFormatCHFS.format(
+                                                    snapshot.data.chfSWealth),
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  fontSize: 32,
+                                                ),
+                                              );
+                                            } else {
+                                              return Text(
+                                                'CHF-S ',
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  fontSize: 32,
+                                                ),
+                                              );
+                                            }
+                                          })
                                     ],
                                   ),
                                 ),
@@ -232,27 +292,19 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '**** 0149',
+                                        'Available Balance',
                                         style:
                                             FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Roboto Mono',
                                           color: FlutterFlowTheme.textColor,
                                         ),
                                       ),
-                                      Text(
-                                        '05/25',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Roboto Mono',
-                                          color: FlutterFlowTheme.textColor,
-                                        ),
-                                      )
                                     ],
                                   ),
                                 )
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ).animated([animationsMap['rowOnPageLoadAnimation1']]),
                     ),
@@ -343,7 +395,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                         controller: textController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: '\$ Amount',
+                          labelText: 'CHF  Amount',
                           labelStyle: FlutterFlowTheme.title1.override(
                             fontFamily: 'Lexend Deca',
                             color: FlutterFlowTheme.grayLight,
@@ -381,7 +433,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                             style: FlutterFlowTheme.bodyText1,
                           ),
                           Text(
-                            '\$7,630',
+                            'CHF 7,630',
                             textAlign: TextAlign.end,
                             style: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Lexend Deca',
@@ -409,6 +461,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                       onPressed: () async {
                         setState(() => _loadingButton2 = true);
                         try {
+                          await fundWallet(int.tryParse(textController.text));
                           await Navigator.push(
                             context,
                             PageTransition(
@@ -433,7 +486,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                           color: Colors.transparent,
                           width: 1,
                         ),
-                        borderRadius: 12,
+                        borderRadius: 50,
                       ),
                       loading: _loadingButton2,
                     )

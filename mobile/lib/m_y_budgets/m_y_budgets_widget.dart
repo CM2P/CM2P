@@ -127,7 +127,7 @@ class _MYBudgetsWidgetState extends State<MYBudgetsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 12),
                                   child: Text(
-                                    '+\$12,402',
+                                    '+CHF 12,402',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.title1.override(
                                       fontFamily: 'Lexend Deca',
@@ -192,7 +192,7 @@ class _MYBudgetsWidgetState extends State<MYBudgetsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 12),
                                   child: Text(
-                                    '-\$8,392',
+                                    '-CHF 8,392',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.title1.override(
                                       fontFamily: 'Lexend Deca',
@@ -326,7 +326,7 @@ class _MYBudgetsWidgetState extends State<MYBudgetsWidget>
                                         ),
                                       ),
                                       Text(
-                                        '\$${listViewBudgetsRecord.budgetAmount}',
+                                        'CHF ${listViewBudgetsRecord.budgetAmount}',
                                         style: FlutterFlowTheme.title1,
                                       ),
                                       Padding(
@@ -368,7 +368,7 @@ class _MYBudgetsWidgetState extends State<MYBudgetsWidget>
                                                   valueOrDefault<String>(
                                                     listViewBudgetsRecord
                                                         .budgetSpent,
-                                                    '\$22,000',
+                                                    'CHF 22,000',
                                                   ),
                                                   textAlign: TextAlign.end,
                                                   style:

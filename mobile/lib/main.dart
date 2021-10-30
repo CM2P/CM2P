@@ -1,3 +1,4 @@
+import 'package:cm2p/algorand.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'm_y_card/m_y_card_widget.dart';
 import 'm_y_budgets/m_y_budgets_widget.dart';
 import 'm_y_profile_page/m_y_profile_page_widget.dart';
+import '../transfer_complete/transfer_complete_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await initAlgorand();
+
   runApp(MyApp());
 }
 

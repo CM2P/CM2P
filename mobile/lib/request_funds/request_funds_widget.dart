@@ -101,7 +101,7 @@ class _RequestFundsWidgetState extends State<RequestFundsWidget> {
                         controller: textController1,
                         obscureText: false,
                         decoration: InputDecoration(
-                          hintText: '\$ Amount',
+                          hintText: 'CHF  Amount',
                           hintStyle: FlutterFlowTheme.title1.override(
                             fontFamily: 'Lexend Deca',
                             color: FlutterFlowTheme.grayLight,

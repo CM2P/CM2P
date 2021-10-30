@@ -47,6 +47,12 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get accountPublicAddress;
 
   @nullable
+  double get fiatWealth;
+
+  @nullable
+  double get chfSWealth;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 

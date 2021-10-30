@@ -158,9 +158,8 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Image.asset(
-                                  'assets/images/visa@3x.png',
+                                  'assets/images/JuliusLogo.png',
                                   width: 44,
-                                  height: 14,
                                   fit: BoxFit.cover,
                                 )
                               ],
@@ -189,7 +188,7 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  '\$7,630',
+                                  'CHF 7,630',
                                   style: FlutterFlowTheme.title1.override(
                                     fontFamily: 'Lexend Deca',
                                     fontSize: 32,
@@ -206,19 +205,12 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '**** 0149',
+                                  'Available Balance',
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Roboto Mono',
                                     color: FlutterFlowTheme.textColor,
                                   ),
                                 ),
-                                Text(
-                                  '05/25',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Roboto Mono',
-                                    color: FlutterFlowTheme.textColor,
-                                  ),
-                                )
                               ],
                             ),
                           )
@@ -426,7 +418,7 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
-                                    '\$50.00',
+                                    'CHF 50.00',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.subtitle2.override(
                                       fontFamily: 'Lexend Deca',
@@ -523,7 +515,7 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
-                                      '\$50.00',
+                                      'CHF 50.00',
                                       textAlign: TextAlign.end,
                                       style:
                                           FlutterFlowTheme.subtitle2.override(
@@ -622,7 +614,7 @@ class _HomePageAlt1WidgetState extends State<HomePageAlt1Widget>
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
-                                      '\$50.00',
+                                      'CHF 50.00',
                                       textAlign: TextAlign.end,
                                       style:
                                           FlutterFlowTheme.subtitle2.override(

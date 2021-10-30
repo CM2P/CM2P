@@ -119,12 +119,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                             offset: Offset(0, 2),
                           )
                         ],
-                        gradient: LinearGradient(
-                          colors: [Color(0xFF00968A), Color(0xFFF2A384)],
-                          stops: [0, 1],
-                          begin: AlignmentDirectional(0.94, -1),
-                          end: AlignmentDirectional(-0.94, 1),
-                        ),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
@@ -137,9 +132,8 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Image.asset(
-                                  'assets/images/visa@3x.png',
+                                  'assets/images/JuliusLogo.png',
                                   width: 44,
-                                  height: 14,
                                   fit: BoxFit.cover,
                                 )
                               ],
@@ -168,7 +162,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  '\$7,630',
+                                  'CHF 7,630',
                                   style: FlutterFlowTheme.title1.override(
                                     fontFamily: 'Lexend Deca',
                                     fontSize: 32,
@@ -185,19 +179,12 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '**** 0149',
+                                  'Available Balance',
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Roboto Mono',
                                     color: FlutterFlowTheme.textColor,
                                   ),
                                 ),
-                                Text(
-                                  '05/25',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Roboto Mono',
-                                    color: FlutterFlowTheme.textColor,
-                                  ),
-                                )
                               ],
                             ),
                           )
@@ -236,7 +223,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 8, 0, 12),
                               child: Text(
-                                '+\$12,402',
+                                '+CHF 12,402',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.title1.override(
                                   fontFamily: 'Lexend Deca',
@@ -299,7 +286,7 @@ class _MYCardWidgetState extends State<MYCardWidget>
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 8, 0, 12),
                               child: Text(
-                                '-\$8,392',
+                                '-CHF 8,392',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.title1.override(
                                   fontFamily: 'Lexend Deca',

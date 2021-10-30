@@ -95,6 +95,20 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.fiatWealth;
+    if (value != null) {
+      result
+        ..add('fiatWealth')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
+    value = object.chfSWealth;
+    if (value != null) {
+      result
+        ..add('chfSWealth')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(double)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -161,6 +175,14 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.accountPublicAddress = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'fiatWealth':
+          result.fiatWealth = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double;
+          break;
+        case 'chfSWealth':
+          result.chfSWealth = serializers.deserialize(value,
+              specifiedType: const FullType(double)) as double;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -198,6 +220,10 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String accountPublicAddress;
   @override
+  final double fiatWealth;
+  @override
+  final double chfSWealth;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder) updates]) =>
@@ -215,6 +241,8 @@ class _$UsersRecord extends UsersRecord {
       this.createdTime,
       this.userTitle,
       this.accountPublicAddress,
+      this.fiatWealth,
+      this.chfSWealth,
       this.reference})
       : super._();
 
@@ -240,6 +268,8 @@ class _$UsersRecord extends UsersRecord {
         createdTime == other.createdTime &&
         userTitle == other.userTitle &&
         accountPublicAddress == other.accountPublicAddress &&
+        fiatWealth == other.fiatWealth &&
+        chfSWealth == other.chfSWealth &&
         reference == other.reference;
   }
 
@@ -255,17 +285,25 @@ class _$UsersRecord extends UsersRecord {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, displayName.hashCode),
-                                                email.hashCode),
-                                            password.hashCode),
-                                        uid.hashCode),
-                                    age.hashCode),
-                                location.hashCode),
-                            phoneNumber.hashCode),
-                        photoUrl.hashCode),
-                    createdTime.hashCode),
-                userTitle.hashCode),
-            accountPublicAddress.hashCode),
+                                            $jc(
+                                                $jc(
+                                                    $jc(
+                                                        $jc(
+                                                            0,
+                                                            displayName
+                                                                .hashCode),
+                                                        email.hashCode),
+                                                    password.hashCode),
+                                                uid.hashCode),
+                                            age.hashCode),
+                                        location.hashCode),
+                                    phoneNumber.hashCode),
+                                photoUrl.hashCode),
+                            createdTime.hashCode),
+                        userTitle.hashCode),
+                    accountPublicAddress.hashCode),
+                fiatWealth.hashCode),
+            chfSWealth.hashCode),
         reference.hashCode));
   }
 
@@ -283,6 +321,8 @@ class _$UsersRecord extends UsersRecord {
           ..add('createdTime', createdTime)
           ..add('userTitle', userTitle)
           ..add('accountPublicAddress', accountPublicAddress)
+          ..add('fiatWealth', fiatWealth)
+          ..add('chfSWealth', chfSWealth)
           ..add('reference', reference))
         .toString();
   }
@@ -336,6 +376,14 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   set accountPublicAddress(String accountPublicAddress) =>
       _$this._accountPublicAddress = accountPublicAddress;
 
+  double _fiatWealth;
+  double get fiatWealth => _$this._fiatWealth;
+  set fiatWealth(double fiatWealth) => _$this._fiatWealth = fiatWealth;
+
+  double _chfSWealth;
+  double get chfSWealth => _$this._chfSWealth;
+  set chfSWealth(double chfSWealth) => _$this._chfSWealth = chfSWealth;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -359,6 +407,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _createdTime = $v.createdTime;
       _userTitle = $v.userTitle;
       _accountPublicAddress = $v.accountPublicAddress;
+      _fiatWealth = $v.fiatWealth;
+      _chfSWealth = $v.chfSWealth;
       _reference = $v.reference;
       _$v = null;
     }
@@ -391,6 +441,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             createdTime: createdTime,
             userTitle: userTitle,
             accountPublicAddress: accountPublicAddress,
+            fiatWealth: fiatWealth,
+            chfSWealth: chfSWealth,
             reference: reference);
     replace(_$result);
     return _$result;

@@ -1,3 +1,4 @@
+import 'package:cm2p/flutter_flow/flutter_flow_theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -115,8 +116,8 @@ class FFButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(options.borderRadius ?? 28),
           side: options.borderSide ?? BorderSide.none,
         ),
-        textColor: options.textStyle.color,
-        color: options.color,
+        textColor: FlutterFlowTheme.textColor,
+        color: FlutterFlowTheme.primaryColor,
         colorBrightness: ThemeData.estimateBrightnessForColor(options.color),
         disabledColor: options.disabledColor,
         disabledTextColor: options.disabledTextColor,

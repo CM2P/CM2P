@@ -131,7 +131,7 @@ class _BudgetDetailsWidgetState extends State<BudgetDetailsWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                               child: Text(
-                                '\$${budgetDetailsBudgetsRecord.budgetAmount}',
+                                'CHF ${budgetDetailsBudgetsRecord.budgetAmount}',
                                 style: FlutterFlowTheme.title1.override(
                                   fontFamily: 'Lexend Deca',
                                   fontSize: 36,
@@ -185,7 +185,7 @@ class _BudgetDetailsWidgetState extends State<BudgetDetailsWidget> {
                                 Text(
                                   valueOrDefault<String>(
                                     budgetDetailsBudgetsRecord.budgetSpent,
-                                    '\$2,502',
+                                    'CHF 2,502',
                                   ),
                                   textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.title3,

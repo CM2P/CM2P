@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class FlutterFlowTheme {
-  static const Color primaryColor = Color(0xFF00968A);
-  static const Color secondaryColor = Color(0xFFF2A384);
-  static const Color tertiaryColor = Color(0xFF39D2C0);
+  static const Color primaryColor = Color(0xFF3C5BFA);
+  static const Color secondaryColor = Color(0xFF18A0FB);
+  static const Color tertiaryColor = Color(0xFF000000);
 
-  static const Color background = Color(0xFF1A1F24);
-  static const Color darkBackground = Color(0xFF111417);
+  static const Color background = Color(0xFFFFFFFF);
+  static const Color darkBackground = Color(0xFFC1D3FF);
   static const Color textColor = Color(0xFFFFFFFF);
   static const Color grayDark = Color(0xFF57636C);
   static const Color grayLight = Color(0xFF8B97A2);

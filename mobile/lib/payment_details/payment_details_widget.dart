@@ -130,7 +130,7 @@ class _PaymentDetailsWidgetState extends State<PaymentDetailsWidget> {
                           children: [
                             Expanded(
                               child: Text(
-                                '\$${paymentDetailsTransactionsRecord.transactionAmount}',
+                                'CHF ${paymentDetailsTransactionsRecord.transactionAmount}',
                                 style: FlutterFlowTheme.title2.override(
                                   fontFamily: 'Lexend Deca',
                                   color: FlutterFlowTheme.textColor,

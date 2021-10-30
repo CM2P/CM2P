@@ -161,7 +161,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12, 4, 0, 0),
                                     child: Text(
-                                      '\$25,281',
+                                      'CHF 25,281',
                                       style: FlutterFlowTheme.title1.override(
                                         fontFamily: 'Lexend Deca',
                                         fontSize: 32,
@@ -185,7 +185,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12, 4, 0, 0),
                                     child: Text(
-                                      '\$25,281',
+                                      'CHF 25,281',
                                       style: FlutterFlowTheme.title1.override(
                                         fontFamily: 'Lexend Deca',
                                         color: FlutterFlowTheme.tertiaryColor,
@@ -209,7 +209,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12, 4, 0, 0),
                                     child: Text(
-                                      '\$25,281',
+                                      'CHF 25,281',
                                       style: FlutterFlowTheme.title1.override(
                                         fontFamily: 'Lexend Deca',
                                         color: FlutterFlowTheme.errorRed,
@@ -258,7 +258,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12, 4, 0, 0),
                                       child: Text(
-                                        '\$25,281',
+                                        'CHF 25,281',
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'Lexend Deca',
                                           fontSize: 32,
@@ -482,7 +482,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12, 4, 0, 0),
                                       child: Text(
-                                        '\$3,000',
+                                        'CHF 3,000',
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'Lexend Deca',
                                           fontSize: 32,
@@ -506,7 +506,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12, 4, 0, 0),
                                       child: Text(
-                                        '\$2,502',
+                                        'CHF 2,502',
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'Lexend Deca',
                                           color: FlutterFlowTheme.errorRed,
@@ -606,7 +606,7 @@ class _HomePageAltWidgetState extends State<HomePageAltWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.7, 0),
                                             child: Text(
-                                              '\$5,000',
+                                              'CHF 5,000',
                                               textAlign: TextAlign.end,
                                               style: FlutterFlowTheme.subtitle2
                                                   .override(
