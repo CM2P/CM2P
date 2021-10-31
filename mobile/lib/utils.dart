@@ -3,10 +3,7 @@ import 'package:cm2p/auth/auth_util.dart';
 import 'package:cm2p/backend/backend.dart';
 import 'package:intl/intl.dart';
 
-final currencyFormatCHF =
-    NumberFormat.currency(locale: "de_CH", symbol: "CHF ");
-final currencyFormatCHFS =
-    NumberFormat.currency(locale: "de_CH", symbol: "CHF-S ");
+final currencyFormat = NumberFormat.currency(locale: "de_CH");
 
 Future<UsersRecord> updateBalance() async {
   final firebaseUser =
@@ -18,4 +15,10 @@ Future<UsersRecord> updateBalance() async {
     'chfSWealth': balance,
   });
   return firebaseUser;
+}
+
+Future<double> getBalance() async {
+  final fireBaseUser =
+      await UsersRecord.getDocument(currentUserReference).first;
+  return fireBaseUser.fiatWealth;
 }

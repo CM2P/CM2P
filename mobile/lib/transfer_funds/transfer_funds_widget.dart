@@ -227,7 +227,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                                             if (snapshot.hasData &&
                                                 snapshot.data != null) {
                                               return Text(
-                                                currencyFormatCHF.format(
+                                                currencyFormat.format(
                                                     snapshot.data.fiatWealth),
                                                 style: FlutterFlowTheme.title1
                                                     .override(
@@ -261,7 +261,7 @@ class _TransferFundsWidgetState extends State<TransferFundsWidget>
                                             if (snapshot.hasData &&
                                                 snapshot.data != null) {
                                               return Text(
-                                                currencyFormatCHFS.format(
+                                                currencyFormat.format(
                                                     snapshot.data.chfSWealth),
                                                 style: FlutterFlowTheme.title1
                                                     .override(

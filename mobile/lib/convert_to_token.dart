@@ -1,3 +1,7 @@
+import 'package:cm2p/algorand.dart';
+import 'package:cm2p/auth/auth_util.dart';
+import 'package:cm2p/backend/backend.dart';
+import 'package:cm2p/transfer_complete/transfer_complete_widget.dart';
 import 'package:cm2p/utils.dart';
 
 import '../components/credit_card_widget.dart';
@@ -62,13 +66,11 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
+            begin: Alignment.topLeft,
             colors: [
               FlutterFlowTheme.gradientLight,
               FlutterFlowTheme.gradientDark
             ],
-            stops: [0, 1],
-            begin: AlignmentDirectional(-1, -1),
-            end: AlignmentDirectional(1, 1),
           ),
         ),
         child: Container(
@@ -92,7 +94,10 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        child: CreditCardWidget(active, 'JB Saving...4442'),
+                        child: CreditCardWidget(
+                          active: active,
+                          name: 'JB Saving...4442',
+                        ),
                         onTap: () {
                           if (!active) {
                             textController.text = '0';
@@ -105,8 +110,11 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
                       InkWell(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child:
-                              CreditCardWidget(!active, 'JB Checking...7832'),
+                          child: CreditCardWidget(
+                            active: !active,
+                            name: 'JB Checking...7832',
+                            balance: 50000,
+                          ),
                         ),
                         onTap: () {
                           if (active) {
@@ -244,8 +252,7 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
                               color: FlutterFlowTheme.textColor, fontSize: 20),
                         ),
                         Text(
-                          (double.parse(textController.value.text) * 0.0025)
-                              .toStringAsFixed(2),
+                          getAmount(),
                           style: TextStyle(
                               color: FlutterFlowTheme.textColor, fontSize: 20),
                         ),
@@ -271,9 +278,28 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
                     ),
                   )),
               FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
-                },
+                onPressed: active &&
+                        textController.value.text != '' &&
+                        textController.value.text != '0'
+                    ? () async {
+                        setState(() => _loadingButton = true);
+                        try {
+                          await fundWallet(
+                              int.tryParse(textController.value.text) * 100);
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.bottomToTop,
+                              duration: Duration(milliseconds: 220),
+                              reverseDuration: Duration(milliseconds: 220),
+                              child: TransferCompleteWidget(),
+                            ),
+                          );
+                        } finally {
+                          setState(() => _loadingButton = false);
+                        }
+                      }
+                    : null,
                 text: 'Convert',
                 options: FFButtonOptions(
                   width: 360,
@@ -297,5 +323,14 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
         ),
       ),
     );
+  }
+
+  String getAmount() {
+    try {
+      return (double.tryParse(textController.value.text) * 0.0025)
+          .toStringAsFixed(2);
+    } catch (e) {
+      return '';
+    }
   }
 }
