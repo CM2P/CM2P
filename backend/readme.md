@@ -1,24 +1,25 @@
 # CM2P backend
 
-written in nodejs with express, communicate with Algorand node exposing REST API
+Written in nodejs with express, communicate with Algorand node exposing REST API
 
 # Out of scope since hackathon
 
-* Secure Rest API backend authentifications
+* Secure Rest API backend Authentication
 
-# run application
+# Run application
 
 `node app.js`
 
 # development
 
-## install sandbox
+## install backend
 Clone the repository https://github.com/algorand/sandbox
-https://github.com/algorand/sandbox
 
-
-ref: https://developer.algorand.org/articles/introducing-sandbox-quick-way-get-started-algorand/
-
+ssh to algorand node see ../algorand_node/readme.md
+```
+git clone this project
+node app.js
+```
 
 # initial setup
 
@@ -31,5 +32,4 @@ node app.js
 * https://github.com/algorand/js-algorand-sdk/tree/develop/examples
 * https://github.com/algorand/js-algorand-sdk
 * https://developer.algorand.org/solutions/framework-integration-exploring-expressjs-with-the-algorand-sdk/
-* https://github.com/crypblockcode/algorand-express
 

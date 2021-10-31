@@ -33,11 +33,11 @@ Remember to only use "eu-central-1" as your region, unless otherwise directed by
 
 logging link: see CM2P-keepass.kdbx file in google drive
 
-## Setting up algorand
+## Setting up Algorand
 
 Participation nodes are running the Algorand consensus protocol, and communicate with each other through relay nodes. Authorized by the user’s participation key, these nodes propose and vote on blocks on behalf of the user’s stake within the consensus algorithm. A single participation node may represent multiple users, provided the appropriate participation keys are installed in it. Anyone can run a participation node, and everyone is encouraged to do so. Participation nodes ensure the security of the Algorand blockchain: As long as enough of them run the consensus protocol honestly, the blockchain is guaranteed to never fork, even if all the relay nodes are compromised.
 
-### node size recommended
+### Node size recommended
 * 4-8GB RAM
 * 100GB SSD
 * 10Mbit broadband
@@ -74,7 +74,6 @@ sudo cp -p /var/lib/algorand/genesis/testnet/genesis.json ${ALGORAND_DATA}/genes
 sudo cp -p /var/lib/algorand/system.json ${ALGORAND_DATA}/system.json
 sudo chown -R algorand ${ALGORAND_DATA}
 ```
-
 
 # Links
 * AWS console https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#InstanceDetails:instanceId=i-07f6e27e0231f4271

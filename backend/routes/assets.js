@@ -2,9 +2,10 @@ var express = require("express");
 const router = express.Router();
 
 const algosdk = require("algosdk");
-const token = 'Your algod API token';
-const server = 'http://54.93.225.56';
-const nodePort = 8080;
+//TODO move to .env but node will be deleted after hackathon anyway
+const token = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+const server = 'http://169.254.108.248';
+const nodePort = 4001;
 const client = new algosdk.Algodv2(token, server, nodePort);
 
 
