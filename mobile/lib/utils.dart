@@ -3,7 +3,7 @@ import 'package:cm2p/auth/auth_util.dart';
 import 'package:cm2p/backend/backend.dart';
 import 'package:intl/intl.dart';
 
-final currencyFormat = NumberFormat.currency(locale: "de_CH");
+final currencyFormat = NumberFormat.currency(locale: "de_CH", symbol: '');
 
 Future<UsersRecord> updateBalance() async {
   final firebaseUser =

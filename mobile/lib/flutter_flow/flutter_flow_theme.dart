@@ -8,7 +8,7 @@ class FlutterFlowTheme {
   static const Color tertiaryColor = Color(0xFFFF00D6);
 
   static const Color background = Color(0xFFFFFFFF);
-  static const Color darkBackground = Color(0xFFC1D3FF);
+  static const Color darkBackground = Color(0xFF070707);
   static const Color textColor = Color(0xFFFFFFFF);
   static const Color grayDark = Color(0xFF57636C);
   static const Color grayLight = Color(0xFF8B97A2);
@@ -16,6 +16,7 @@ class FlutterFlowTheme {
   static const Color gradientDark = Color(0xFF000000);
   static const Color gradientLight = Color(0xFF141E55);
   static const Color creditCardText = Color(0xFF000615);
+  static const Color icon = Color(0xFFA7CFFF);
 
   String primaryFontFamily = 'Roboto';
   String secondaryFontFamily = 'Roboto';
@@ -33,8 +34,8 @@ class FlutterFlowTheme {
   static TextStyle get title3 => GoogleFonts.getFont(
         'Lexend Deca',
         color: textColor,
-        fontWeight: FontWeight.w500,
-        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        fontSize: 22,
       );
   static TextStyle get subtitle1 => GoogleFonts.getFont(
         'Lexend Deca',
@@ -50,7 +51,7 @@ class FlutterFlowTheme {
       );
   static TextStyle get bodyText1 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: grayLight,
+        color: textColor,
         fontWeight: FontWeight.normal,
         fontSize: 18,
       );
@@ -59,6 +60,13 @@ class FlutterFlowTheme {
         color: textColor,
         fontWeight: FontWeight.normal,
         fontSize: 14,
+      );
+
+  static TextStyle get bodyText3 => GoogleFonts.getFont(
+        'Lexend Deca',
+        color: textColor,
+        fontWeight: FontWeight.normal,
+        fontSize: 12,
       );
 }
 

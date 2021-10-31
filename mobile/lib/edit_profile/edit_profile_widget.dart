@@ -1,3 +1,5 @@
+import 'package:cm2p/avatar_widget.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
@@ -96,28 +98,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    width: 90,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.darkBackground,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Container(
-                      width: 80,
-                      height: 80,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        valueOrDefault<String>(
-                          editProfileUsersRecord.photoUrl,
-                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/finance-app-sample-kugwu4/assets/ijvuhvqbvns6/uiAvatar@2x.png',
-                        ),
-                      ),
-                    ),
-                  ),
+                  AvatarWidget(editProfileUsersRecord.photoUrl),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                     child: FFButtonWidget(
