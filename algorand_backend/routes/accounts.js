@@ -2,8 +2,6 @@ var express = require("express");
 const router = express.Router();
 
 const algosdk = require("algosdk");
-
-const algosdk = require("algosdk");
 //TODO move to .env but node will be deleted after hackathon anyway
 const token = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
 const server = 'http://169.254.108.248';

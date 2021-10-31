@@ -1,0 +1,10 @@
+{
+  "name": "StreamrCHFS",
+  "version": "1.0.0",
+  "description": "streamr CHF-S stable coin",
+  "dependencies": {
+    "algosdk": "^1.12.0",
+    "request": "^2.81.0",
+    "streamr-client": "^5.4.5"
+  }
+}
