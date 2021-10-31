@@ -1,3 +1,8 @@
+# CHF-S Token creation 
+The code to create the CHF-S stable coin in Algorand Testnet is located in
+../mobile/lib/algorand.dart:121
+it leverage the ASA framework.
+
 # Token Design
 
 CHF-S (CHF-S) is a digital stablecoin that is pegged to the Swiss franc and run on Algorand
@@ -47,11 +52,6 @@ Negative interest rates are a form of monetary policy that sees interest rates f
 Central banks and regulators use this unusual policy tool when there are strong signs of deflation.
 
 We model the negative interest rate of -0.75% by leveraging the clawback Algorand functionality
-
-
-
-
-
 
 * Creator: SNB account adress
 * AssetName: CHF stable coin
