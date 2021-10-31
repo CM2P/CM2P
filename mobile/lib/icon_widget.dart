@@ -14,15 +14,15 @@ class IconWidget extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/TokenIcon.png',
-          height: 30,
+          height: text.length > 0 ? 30 : 22,
         ),
         Text(
           ' CHF-S ',
-          style: TextStyle(color: FlutterFlowTheme.textColor),
+          style: FlutterFlowTheme.bodyText2,
         ),
         Text(
           text,
-          style: TextStyle(color: FlutterFlowTheme.textColor, fontSize: 24),
+          style: FlutterFlowTheme.title1,
         ),
       ],
     );

@@ -7,8 +7,8 @@ class FlutterFlowTheme {
   static const Color secondaryColor = Color(0xFF18A0FB);
   static const Color tertiaryColor = Color(0xFFFF00D6);
 
-  static const Color background = Color(0xFFFFFFFF);
-  static const Color darkBackground = Color(0xFF070707);
+  static const Color background = Color(0xFF141E55);
+  static const Color darkBackground = Color(0xFF000000);
   static const Color textColor = Color(0xFFFFFFFF);
   static const Color grayDark = Color(0xFF57636C);
   static const Color grayLight = Color(0xFF8B97A2);
@@ -39,13 +39,13 @@ class FlutterFlowTheme {
       );
   static TextStyle get subtitle1 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: grayLight,
+        color: textColor,
         fontWeight: FontWeight.w500,
         fontSize: 18,
       );
   static TextStyle get subtitle2 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: grayLight,
+        color: textColor,
         fontWeight: FontWeight.normal,
         fontSize: 16,
       );

@@ -166,7 +166,9 @@ class _MYCardWidgetState extends State<MYCardWidget>
                     type: PageTransitionType.leftToRight,
                     duration: Duration(milliseconds: 200),
                     reverseDuration: Duration(milliseconds: 200),
-                    child: ConvertToTokenWidget(),
+                    child: ConvertToTokenWidget(
+                      withBackButton: true,
+                    ),
                   ),
                 ),
                 text: 'Get CHF-S Stablecoins',

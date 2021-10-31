@@ -14,7 +14,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ConvertToTokenWidget extends StatefulWidget {
-  ConvertToTokenWidget({Key key}) : super(key: key);
+  bool withBackButton;
+
+  ConvertToTokenWidget({Key key, this.withBackButton = false})
+      : super(key: key);
 
   @override
   _ConvertToTokenWidgetState createState() => _ConvertToTokenWidgetState();
@@ -34,37 +37,8 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        automaticallyImplyLeading: false,
-        leading: InkWell(
-          onTap: () async {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back,
-            color: FlutterFlowTheme.primaryColor,
-            size: 24,
-          ),
-        ),
-        title: Text(
-          'Convert',
-          style: FlutterFlowTheme.subtitle2.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.textColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        actions: [],
-        centerTitle: true,
-        elevation: 1,
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
+    return Material(
+      child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -74,13 +48,41 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
             ],
           ),
         ),
-        child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(),
+        child: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Stack(
+                  children: [
+                    if (widget.withBackButton)
+                      InkWell(
+                        onTap: () async {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: FlutterFlowTheme.primaryColor,
+                          size: 24,
+                        ),
+                      ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Convert',
+                        style: FlutterFlowTheme.subtitle2,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Divider(
+                  color: FlutterFlowTheme.primaryColor,
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.all(16),
                 child: Text('SELECT ACCOUNT',

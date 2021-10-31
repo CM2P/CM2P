@@ -1,5 +1,7 @@
 import 'package:cm2p/algorand.dart';
 import 'package:cm2p/convert_to_token.dart';
+import 'package:cm2p/invest_screen.dart';
+import 'package:cm2p/trade_sceen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               child: Center(
                 child: Builder(
                   builder: (context) => Image.asset(
-                    'assets/images/Medical_ScheduleApp_0.0.png',
+                    'assets/images/LaunchImage.png',
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.fitWidth,
                   ),
@@ -104,9 +106,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'MY_Card': MYCardWidget(),
-      'MY_Budgets': MYBudgetsWidget(),
+      'MY_Budgets': InvestScreen(),
       'Convert': ConvertToTokenWidget(),
-      'Trade': MYBudgetsWidget(),
+      'Trade': TradeScreen(),
       'MY_profilePage': MYProfilePageWidget(),
     };
     return Scaffold(

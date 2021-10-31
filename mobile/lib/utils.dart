@@ -17,8 +17,14 @@ Future<UsersRecord> updateBalance() async {
   return firebaseUser;
 }
 
-Future<double> getBalance() async {
+Future<double> getFiatBalance() async {
   final fireBaseUser =
       await UsersRecord.getDocument(currentUserReference).first;
   return fireBaseUser.fiatWealth;
+}
+
+Future<double> getTokenBalance() async {
+  final fireBaseUser =
+      await UsersRecord.getDocument(currentUserReference).first;
+  return getAssetAmount(publicAddress: fireBaseUser.accountPublicAddress);
 }

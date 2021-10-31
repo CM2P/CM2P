@@ -1,3 +1,5 @@
+import 'package:cm2p/avatar_widget.dart';
+
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../change_password/change_password_widget.dart';
@@ -48,16 +50,23 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
           );
         }
         final mYProfilePageUsersRecord = snapshot.data;
-        return Scaffold(
-          key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.background,
-          body: SingleChildScrollView(
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              colors: [
+                FlutterFlowTheme.gradientLight,
+                FlutterFlowTheme.gradientDark
+              ],
+            ),
+          ),
+          child: SafeArea(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 200,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -66,12 +75,6 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                         offset: Offset(0, 2),
                       )
                     ],
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF00968A), Color(0xFFF2A384)],
-                      stops: [0, 1],
-                      begin: AlignmentDirectional(0.94, -1),
-                      end: AlignmentDirectional(-0.94, 1),
-                    ),
                     borderRadius: BorderRadius.circular(0),
                   ),
                   child: Padding(
@@ -85,29 +88,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Card(
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: FlutterFlowTheme.primaryColor,
-                                elevation: 2,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 2, 2, 2),
-                                  child: Container(
-                                    width: 60,
-                                    height: 60,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Image.asset(
-                                      'assets/images/avatar.png',
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              AvatarWidget(mYProfilePageUsersRecord.photoUrl),
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
@@ -173,23 +154,7 @@ class _MYProfilePageWidgetState extends State<MYProfilePageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                              child: Text(
-                                valueOrDefault<String>(
-                                  mYProfilePageUsersRecord.userTitle,
-                                  'Badass Busybody',
-                                ),
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xB3FFFFFF),
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
+                              padding: EdgeInsetsDirectional.only(top: 8),
                               child: Text(
                                 mYProfilePageUsersRecord.email,
                                 style: FlutterFlowTheme.bodyText1.override(
