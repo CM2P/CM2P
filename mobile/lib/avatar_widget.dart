@@ -17,10 +17,18 @@ class AvatarWidget extends StatelessWidget {
         color: FlutterFlowTheme.darkBackground,
         shape: BoxShape.circle,
       ),
-      child: Image.network(
-        valueOrDefault<String>(
-          photoUrl,
-          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/finance-app-sample-kugwu4/assets/ijvuhvqbvns6/uiAvatar@2x.png',
+      child: Container(
+        width: 80,
+        height: 80,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+        ),
+        child: Image.network(
+          valueOrDefault<String>(
+            photoUrl,
+            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/finance-app-sample-kugwu4/assets/ijvuhvqbvns6/uiAvatar@2x.png',
+          ),
         ),
       ),
     );

@@ -101,6 +101,6 @@ class CreditCardWidget extends StatelessWidget {
   }
 
   Future<double> _getBalance() async {
-    return balance != null ? Future<double>.value(balance) : getBalance();
+    return balance != null ? Future<double>.value(balance) : getFiatBalance();
   }
 }
