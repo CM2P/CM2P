@@ -39,10 +39,48 @@
               "client_type": 3
             },
             {
-              "client_id": "899607778011-niuf7uf8ubb8djkn7qfe8mbsag28ehv8.apps.googleusercontent.com",
+              "client_id": "899607778011-mf6tg93a6kakjak7q8csktv81qcn5pde.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.flutterflow.cm2p"
+                "bundle_id": "io.blockbyte.lendit",
+                "app_store_id": "1469739663"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899607778011:android:e1e5e15ac3c7c2a08bf2fe",
+        "android_client_info": {
+          "package_name": "io.blockbyte.lendit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899607778011-1dsbogvdrgfc93pnnd9v70ukikdv5voh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs5iGNl_Vqu7dkCts5XMEZ6d5hwJV02gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899607778011-1dsbogvdrgfc93pnnd9v70ukikdv5voh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "899607778011-mf6tg93a6kakjak7q8csktv81qcn5pde.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.blockbyte.lendit",
+                "app_store_id": "1469739663"
               }
             }
           ]

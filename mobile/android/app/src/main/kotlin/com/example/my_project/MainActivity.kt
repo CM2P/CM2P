@@ -1,4 +1,4 @@
-package com.flutterflow.cm2p
+package io.blockbyte.lendit
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity
