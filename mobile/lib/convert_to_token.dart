@@ -1,6 +1,7 @@
 import 'package:cm2p/algorand.dart';
 import 'package:cm2p/auth/auth_util.dart';
 import 'package:cm2p/backend/backend.dart';
+import 'package:cm2p/icon_widget.dart';
 import 'package:cm2p/transfer_complete/transfer_complete_widget.dart';
 import 'package:cm2p/utils.dart';
 
@@ -190,24 +191,7 @@ class _ConvertToTokenWidgetState extends State<ConvertToTokenWidget> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/TokenIcon.png',
-                    height: 30,
-                  ),
-                  Text(
-                    ' CHF-S ',
-                    style: TextStyle(color: FlutterFlowTheme.textColor),
-                  ),
-                  Text(
-                    textController.value.text,
-                    style: TextStyle(
-                        color: FlutterFlowTheme.textColor, fontSize: 24),
-                  ),
-                ],
-              ),
+              IconWidget(textController.value.text),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 child: Row(
