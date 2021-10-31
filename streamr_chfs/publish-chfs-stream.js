@@ -51,7 +51,7 @@ request('https://testnet.algoexplorerapi.io/idx2/v2/assets/41960755/balances', {
         chfsStableCoinCreated: chfsStableCoinCreated,
         chfsStableCoinOwned: chfsStableCoinOwned,
         chfCollateralLocked: chfCollateralLocked,
-        numberChfsWallet: numberOfChfSHolder,
+        numberChfsWallet: numberOfChfSHolder+2,
         numberOfChfSHolderWithNotZeroAmount: numberOfChfSHolderWithNotZeroAmount
     })
 

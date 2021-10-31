@@ -11,6 +11,8 @@ We publish real time data concerning CHF-S using Streamr
 
 our Streamr is public at https://streamr.network/streams/0x4ab637f2880fb13fd5d6817eb4ee6981e2002d40%2Fchfs-swiss-stable-coin
 
+![img.png](img.png)
+
 # Subscribe to Streamr
 
 ```
