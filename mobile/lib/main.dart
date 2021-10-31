@@ -1,4 +1,5 @@
 import 'package:cm2p/algorand.dart';
+import 'package:cm2p/convert_to_token.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -104,57 +105,73 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'MY_Card': MYCardWidget(),
       'MY_Budgets': MYBudgetsWidget(),
+      'Convert': ConvertToTokenWidget(),
+      'Trade': MYBudgetsWidget(),
       'MY_profilePage': MYProfilePageWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.credit_card,
-              size: 24,
+            icon: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Image.asset(
+                'assets/images/home.png',
+                height: 22,
+              ),
             ),
-            activeIcon: FaIcon(
-              FontAwesomeIcons.solidCreditCard,
-              size: 20,
-            ),
-            label: '•',
-            tooltip: '',
+            label: 'HOME',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.stacked_line_chart_rounded,
-              size: 24,
+            icon: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Image.asset(
+                'assets/images/invest.png',
+                height: 22,
+              ),
             ),
-            activeIcon: Icon(
-              Icons.stacked_line_chart_rounded,
-              size: 24,
-            ),
-            label: '•',
-            tooltip: '',
+            label: 'INVEST',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 24,
+            icon: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Image.asset(
+                'assets/images/TokenIcon.png',
+                height: 22,
+              ),
             ),
-            activeIcon: Icon(
-              Icons.account_circle_rounded,
-              size: 24,
+            label: 'CONVERT',
+          ),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Image.asset(
+                'assets/images/trade.png',
+                height: 22,
+              ),
             ),
-            label: '•',
-            tooltip: '',
-          )
+            label: 'TRADE',
+          ),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Image.asset(
+                'assets/images/person.png',
+                height: 22,
+              ),
+            ),
+            label: 'PROFILE',
+          ),
         ],
         backgroundColor: FlutterFlowTheme.darkBackground,
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
-        selectedItemColor: FlutterFlowTheme.primaryColor,
-        unselectedItemColor: FlutterFlowTheme.grayLight,
+        selectedItemColor: FlutterFlowTheme.tertiaryColor,
+        unselectedItemColor: FlutterFlowTheme.icon,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
+        selectedFontSize: 8,
+        unselectedFontSize: 8,
       ),
     );
   }
