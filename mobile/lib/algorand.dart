@@ -52,7 +52,8 @@ final initialChfSFunds = {
 void initAlgorand() async {
   // TODO use our thing
   final algodClient = AlgodClient(
-    apiUrl: 'http://54.93.225.56:4001/',
+    // apiUrl: 'http://54.93.225.56:4001/',
+    apiUrl: AlgoExplorer.TESTNET_ALGOD_API_URL,
     apiKey: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     // apiUrl: Platform.isAndroid
     //     ? 'http://10.0.2.2:4001'
